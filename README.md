@@ -80,17 +80,22 @@ structure.
   }
 ```
 
-# Requirements:
+# Notes
+* Fork the Repo and make a Pull Request to this with your solution
+* No need to configure an aws account
+* Just mocking the aws calls in your specs is enough
 
-- NO NEED TO CONFIGURE AN AWS ACCOUNT
-- JUST MOCKING THE AWS CALLS IN YOUR SPECS IS ENOUGH
+# Requirements:
 
 - Parse the MSK Event with the records inside your lambda function
 - Filter out any record that is not a userType of 'admin'
 - Every record that is of type admin, you need to attach a new attribute called
   'passcode' to the record with an 8-integer random generated code value
-- Submit store the record into a dynamoDB table called 'userTable' using
-  a PutItem command
+- Submit  the record into a dynamoDB table called 'userTable' using
+  a PutItem command to store it
+  ```
+      process.env.TABLE_NAME = 'userTable';
+  ```
 
 - For all the records that are NOT of userType 'admin', parse the record and
   send it over an AWS SQS Queue using a SendMessageBatchCommand
@@ -102,3 +107,5 @@ structure.
 
 - Use RxJS in your lambda function (bonus points)
 - Make sure you create the pertaining spec scenarios for your function with Jest
+- Update the cdk-assessment-stack.ts to register your DynamoDBTable, an SQSQueue and
+  your Lambda Function for deployment
