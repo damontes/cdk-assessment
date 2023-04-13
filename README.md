@@ -29,12 +29,12 @@ structure.
   const event = {
       records: {
           ['offset.1']: [{
-              key: v4().toString(),
+              key: '1233456789',
               headers: [],
               offset: 1,
               partition: 1,
               timestamp: new Date().getTime(),
-              topic: 'c360.int.publicFormCapture',
+              topic: 'kafkaTopic',
               timestampType: 'CREATE_TIME',
               value: Buffer.from(JSON.stringify({
                   eventType: 'FormDataProcessed',
@@ -52,12 +52,12 @@ structure.
               })).toString('base64')
           }],
           ['offset.2']: [{
-              key: v4().toString(),
+              key: '1233456788'),
               headers: [],
               offset: 2,
               partition: 1,
               timestamp: new Date().getTime(),
-              topic: 'c360.int.publicFormCapture',
+              topic: 'kafkaTopic',
               timestampType: 'CREATE_TIME',
               value: Buffer.from(JSON.stringify({
                   eventType: 'FormDataProcessed',
