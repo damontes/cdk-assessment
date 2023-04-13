@@ -3,8 +3,6 @@
 You should explore the contents of this project. This is a simple CDK
 initialized application which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
 ## Useful commands
 
 * `npm run build`   compile typescript to js
