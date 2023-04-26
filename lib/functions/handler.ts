@@ -39,7 +39,8 @@ const handler = async (event: EventType) => {
       putItem({
         tableName,
         item,
-        conditionExpression: "attribute_not_exists(key)",
+        conditionExpression: "attribute_not_exists(#key)",
+        keys: ["key"],
       })
     )
   );

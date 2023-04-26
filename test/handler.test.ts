@@ -42,7 +42,8 @@ describe("handle", () => {
     expect(dynamodbServices.putItem).toHaveBeenCalledWith({
       tableName: "userTables",
       item: { ...mock_records[0], passCode },
-      conditionExpression: "attribute_not_exists(key)",
+      conditionExpression: "attribute_not_exists(#key)",
+      keys: ["key"],
     });
 
     expect(result.statusCode).toBe(200);
